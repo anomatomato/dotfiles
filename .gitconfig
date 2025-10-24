@@ -1,0 +1,9 @@
+[user]
+	name = An Hoang
+  email = 55243106+anomatomato@users.noreply.github.com
+[pull]
+  rebase = true
+[init]
+  defaultBranch = main
+[credential]
+	helper = store
