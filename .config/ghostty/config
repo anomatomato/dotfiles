@@ -55,7 +55,7 @@
 # ==========================
 # THEME & COLORS
 # ==========================
-theme = Catppuccin Mocha
+theme = "tokyonight_night"
 
 # Minimum contrast for better readability
 minimum-contrast = 1.1
