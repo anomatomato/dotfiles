@@ -25,21 +25,25 @@ return {
         expr = true,
         desc = "Goto/Apply Next Edit Suggestion",
       },
-      {
-        "<leader>aT",
-        -- Toggle AI next edit suggestions
-        function()
-          require("sidekick.nes").toggle()
-        end,
-        desc = "Sidekick Toggle Suggestions",
-      },
-      {
-        "<leader>ae",
-        -- Enable AI next edit suggestions
-        function()
-          require("sidekick.nes").enable()
-        end,
-        desc = "Sidekick Enable Suggestions",
+    },
+  },
+
+  {
+    "saghen/blink.cmp",
+    ---@module "blink.cmp"
+    ---@type blink.cmp.Config
+    opts = {
+      keymap = {
+        ["<Tab>"] = {
+          "snippet_forward",
+          function() -- sidekick next edit suggestion in insert mode
+            return require("sidekick.nes").apply()
+          end,
+          function() -- if you are using Neovim's native inline completions
+            return vim.lsp.inline_completion.get()
+          end,
+          "fallback",
+        },
       },
     },
   },
