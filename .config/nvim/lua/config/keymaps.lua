@@ -6,9 +6,9 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- J,K: move faster,
-keymap("n", "<leader>j", "J", { noremap = true, silent = true, desc = "Join lower line" })
-keymap({ "n", "v" }, "J", "5j", opts)
-keymap({ "n", "v" }, "K", "5k", opts)
+-- keymap("n", "<leader>j", "J", { noremap = true, silent = true, desc = "Join lower line" })
+-- keymap({ "n", "v" }, "J", "5j", opts)
+-- keymap({ "n", "v" }, "K", "5k", opts)
 -- keymap("v", "J", ":m .+1<CR>==", opts)
 -- keymap("v", "K", ":m .-2<CR>==", opts)
 -- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
