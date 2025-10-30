@@ -13,6 +13,11 @@ opt.wrap = true -- turn on line wrapping
 opt.linebreak = true -- wrap only at word boundaries
 opt.showbreak = "→ " -- show an arrow at wrapped lines
 
+vim.filetype.add({
+  pattern = {
+    ["*.ju.py"] = "neopyter",
+  },
+})
 -- LSP Server to use for python
 vim.g.lazyvim_python_lsp = "basedpyright"
 
