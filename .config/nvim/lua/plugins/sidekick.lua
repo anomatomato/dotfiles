@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   {
     "folke/sidekick.nvim",
@@ -6,7 +7,7 @@ return {
       nes = {
         trigger = {
           -- events that trigger sidekick next edit suggestions
-          events = { "ModeChanged i:n", "TextChanged", "User SidekickNesDone", "TextChangedI" },
+          events = { "ModeChanged i:n", "TextChanged", "User SidekickNesDone" }, --"TextChangedI"
         },
         clear = {
           events = {}, -- remove the default [ "TextChangedI", "InsertEnter" ] for clearing events
@@ -37,11 +38,15 @@ return {
         ["<Tab>"] = {
           "snippet_forward",
           function() -- sidekick next edit suggestion in insert mode
-            return require("sidekick.nes").apply()
+            if require("sidekick.nes").have() then
+              return require("sidekick.nes").apply()
+            else
+              return false
+            end
           end,
-          function() -- if you are using Neovim's native inline completions
-            return vim.lsp.inline_completion.get()
-          end,
+          -- function() -- if you are using Neovim's native inline completions
+          --   return vim.lsp.inline_completion.get()
+          -- end,
           "fallback",
         },
       },

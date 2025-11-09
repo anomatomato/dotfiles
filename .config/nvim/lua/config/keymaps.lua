@@ -27,4 +27,4 @@ vim.keymap.del("n", "<leader><tab>[")
 vim.keymap.del("n", "<leader><tab>]")
 
 -- Escape terminal mode
-keymap("t", "<S-esc>", "<C-\\><C-n>", opts)
+-- keymap("t", "<S-esc>", "<C-\\><C-n>", opts)

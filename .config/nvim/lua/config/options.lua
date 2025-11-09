@@ -4,6 +4,8 @@
 
 local opt = vim.opt
 
+opt.exrc = true -- Enable project lua configs
+
 -- Indent
 opt.autoindent = true -- Copy indent from current line when starting a new line (When <CR> or 'o' or 'O')
 opt.smarttab = true -- When on, a <Tab> in front of a line inserts blanks according to 'shiftwidth'
@@ -13,11 +15,6 @@ opt.wrap = true -- turn on line wrapping
 opt.linebreak = true -- wrap only at word boundaries
 opt.showbreak = "→ " -- show an arrow at wrapped lines
 
-vim.filetype.add({
-  pattern = {
-    ["*.ju.py"] = "neopyter",
-  },
-})
 -- LSP Server to use for python
 vim.g.lazyvim_python_lsp = "basedpyright"
 

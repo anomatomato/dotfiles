@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   -- LSP configuration for Python
   {
@@ -8,6 +9,7 @@ return {
           settings = {
             basedpyright = {
               analysis = {
+                useLibraryCodeForTypes = true, -- Determines whether pyright reads, parses and analyzes library code to extract type information in the absence of type stub files. Type information will typically be incomplete. We recommend using type stubs where possible. The default value for this option is true.
                 inlayHints = {
                   --- see https://docs.basedpyright.com/v1.21.0/configuration/language-server-settings/#based-settings
                   variableTypes = true, -- inlay hints on assignments to variables
@@ -15,6 +17,7 @@ return {
                   functionReturnTypes = true,
                   genericTypes = true, -- inlay hints on inferred generic types
                 },
+                typeCheckingMode = "standard", --  ["off", "basic", "standard", "strict", "recommended", "all"]
               },
             },
           },

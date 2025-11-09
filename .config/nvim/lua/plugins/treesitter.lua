@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
   -- would overwrite `ensure_installed` with the new value.
@@ -12,6 +13,7 @@ return {
         "diff",
         "html",
         "javascript",
+        "jinja", -- for work
         "jsdoc",
         "json",
         "jsonc",
