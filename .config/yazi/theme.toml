@@ -1,0 +1,6 @@
+# Color scheme config
+[flavor]
+dark = "tokyo-night"
+
+[mgr]
+cwd = { fg = "#88e6e2" }
