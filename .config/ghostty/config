@@ -79,8 +79,8 @@ font-feature = +dlig
 # WINDOW & APPEARANCE
 # ==========================
 # Transparency and blur (create modern glassmorphic effect)
-background-opacity = 0.95
-background-blur = 10
+# background-opacity = 0.95
+# background-blur = 10
 
 # Window padding for breathing room
 window-padding-x = 0
