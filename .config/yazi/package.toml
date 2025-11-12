@@ -1,5 +1,27 @@
-[plugin]
-deps = []
+[[plugin.deps]]
+use = "ahkohd/eza-preview"
+rev = "7b00863"
+hash = "c538f3766b4b3bafbae3f0b7c3c3d763"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "8f37dc5"
+hash = "ee71543790f0ce3951161045a3787abd"
+
+[[plugin.deps]]
+use = "AnirudhG07/plugins-yazi:copy-file-contents"
+rev = "71545f4"
+hash = "f8530ee84fee95dbcc26bb1d8d8019c7"
+
+[[plugin.deps]]
+use = "boydaihungst/restore"
+rev = "2161735"
+hash = "901741afba1979739b4650324265162e"
+
+[[plugin.deps]]
+use = "uhs-robert/recycle-bin"
+rev = "bce0eb1"
+hash = "fc696aa2ff140e8d8ee1f490ca787bb0"
 
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
