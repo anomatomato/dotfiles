@@ -22,6 +22,10 @@ configuration {
   display-powermenu: " 🔋Power ";
   display-Network: " 󰤨 Network ";
 
+	kb-remove-char-back: "BackSpace,Shift+BackSpace"; // removed Ctrl+l
+	kb-mode-next: "Shift+Right,Control+Tab,Control+l";
+	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab,Control+h";
+	kb-mode-complete: ""; // removed ctrl+h
 /*	font: "mono 12";*/
 /*	location: 0;*/
 /*	wayland-layer: "overlay";*/
