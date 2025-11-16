@@ -7,7 +7,7 @@ return {
       nes = {
         trigger = {
           -- events that trigger sidekick next edit suggestions
-          events = { "ModeChanged i:n", "TextChanged", "User SidekickNesDone" }, --"TextChangedI"
+          events = { "ModeChanged i:n", "TextChanged", "User SidekickNesDone", "TextChangedI" }, --"TextChangedI"
         },
         clear = {
           events = {}, -- remove the default [ "TextChangedI", "InsertEnter" ] for clearing events
