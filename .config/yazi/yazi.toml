@@ -30,6 +30,13 @@ image_quality = 80             # Custom, 75
 ueberzug_scale = 1
 ueberzug_offset = [0, 0, 0, 0]
 
+[opener]
+edit = [
+  { run = '${EDITOR:-vim} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+  { run = 'code -n "$@"', desc = "VS-Code", for = "unix" },
+  { run = 'nvim "$@"', desc = "Neovim", for = "unix" },
+]
+
 # Eza-preview
 [[plugin.prepend_previewers]]
 name = "*/"

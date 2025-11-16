@@ -20,8 +20,8 @@ hash = "901741afba1979739b4650324265162e"
 
 [[plugin.deps]]
 use = "uhs-robert/recycle-bin"
-rev = "bce0eb1"
-hash = "fc696aa2ff140e8d8ee1f490ca787bb0"
+rev = "1762676"
+hash = "c77042b4296544a9edb4849338056039"
 
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
