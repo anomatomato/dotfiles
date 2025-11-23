@@ -7,8 +7,8 @@ return {
     formatters = {
       prettier = {
         append_args = {
-          "--print-width",
-          "120", -- max line length
+          -- "--print-width",
+          -- "120", -- max line length
         },
       },
     },
