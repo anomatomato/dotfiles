@@ -6,6 +6,16 @@
 
 [mgr]
 prepend_keymap = [
+  # Yank also copies to system clipboard
+  # { on = "y", run = [
+  #   'shell -- echo "$@" | xclip -i -selection clipboard -t text/uri-list',
+  #   "yank",
+  # ] },
+  # cd back to root of current git repo
+  { on = [
+    "g",
+    "r",
+  ], run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"', desc = "Go to git root" },
   # Eza preview
   { on = [
     "e",
