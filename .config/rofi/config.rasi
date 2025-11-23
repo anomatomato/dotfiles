@@ -1,12 +1,12 @@
 configuration {
-	modes: "combi,drun,powermenu";
+	modes: "combi,vscode-recent,powermenu";
   font: "JetBrainsMono Nerd Font 16";
   terminal: "ghostty";
   icon-theme: "Papirus";
   show-icons: true;
   hide-scrollbar: true;
 
-	window-format: "{w}: {t}";
+	window-format: "{w} | {t}";
 
 	combi-hide-mode-prefix: true;
 	combi-modes: "window,drun,powermenu,run";
@@ -21,11 +21,36 @@ configuration {
   display-drun: " 🥷 Apps ";
   display-powermenu: " 🔋Power ";
   display-Network: " 󰤨 Network ";
+  vscode-recent {
+      display-name: " ﬏ Recent";
+  }
 
 	kb-remove-char-back: "BackSpace,Shift+BackSpace"; // removed Ctrl+l
 	kb-mode-next: "Shift+Right,Control+Tab,Control+l";
 	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab,Control+h";
 	kb-mode-complete: ""; // removed ctrl+h
+
+    // drun {
+    //     display-name: "";
+    // }
+    // run {
+    //     display-name: "";
+    // }
+    // ssh {
+    //     display-name: "";
+    // }
+    // filebrowser {
+    //     display-name: "";
+    // }
+    // window {
+    //     display-name: "";
+    // }
+    // powermenu {
+    //     display-name: "";
+    // }
+    // audio-switcher {
+    //     display-name: "󱄠";
+    // }
 /*	font: "mono 12";*/
 /*	location: 0;*/
 /*	wayland-layer: "overlay";*/
