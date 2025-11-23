@@ -63,7 +63,7 @@ minimum-contrast = 1.1
 # ==========================
 # FONT CONFIGURATION
 # ==========================
-font-family = JetBrains Mono
+font-family = Fira Code
 # fallback fonts for better unicode
 font-family = Noto Color Emoji
 font-family = Noto Sans CJK JP
