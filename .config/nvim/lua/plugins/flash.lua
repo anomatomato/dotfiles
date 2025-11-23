@@ -14,5 +14,16 @@ return {
       -- add pattern to search register
       register = true,
     },
+    modes = {
+      -- enhanced f,F,t,T
+      char = {
+        enabled = false,
+        jump_labels = false,
+      },
+      -- using / or ?
+      search = {
+        enabled = true,
+      },
+    },
   },
 }
