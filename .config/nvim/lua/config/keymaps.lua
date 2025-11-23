@@ -15,10 +15,10 @@ local opts = { noremap = true, silent = true }
 -- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
 -- NVIM-Surround: use commands like `ysarB` for: [hello] -> {[hello]}
-keymap({ "v", "o" }, "ir", "i[")
-keymap({ "v", "o" }, "ar", "a[")
-keymap({ "v", "o" }, "ia", "i<")
-keymap({ "v", "o" }, "aa", "a<")
+keymap({ "v", "o" }, "ir", "i[", { desc = "[] block" })
+keymap({ "v", "o" }, "ar", "a[", { desc = "[] block" })
+-- keymap({ "v", "o" }, "ia", "i<", { desc = "<> block" })
+-- keymap({ "v", "o" }, "aa", "a<", { desc = "<> block" })
 
 -- Tabs
 keymap("n", "<leader><tab>j", "<cmd>tabnext<cr>", { desc = "Next Tab" })
