@@ -16,17 +16,10 @@ opt.linebreak = true -- wrap only at word boundaries
 opt.showbreak = "→ " -- show an arrow at wrapped lines
 
 -- Spell checker
-opt.spell = true -- Enable spellchecking
-opt.spelllang = { "en_us", "de" } -- Set languages
+-- opt.spell = true -- Enable spellchecking
+opt.spelllang = { "en", "de" } -- Set languages
 
 -- LSP Server to use for python
 vim.g.lazyvim_python_lsp = "basedpyright"
-
-vim.g.vimtex_view_method = "sioyek"
--- ensure Okular is used with --unique so the same instance is reused
--- vim.g.vimtex_view_general_viewer = "okular"
--- vim.g.vimtex_view_general_options = "--unique file:@pdf\\#src:@line@tex"
--- vim.g.tex_flavor = "latex"
--- vim.g.vimtex_compiler_progname = "nvr"
 
 -- vim.opt.winbar = "%=%m %f"-- %= separation for right alignment, %m modifier flag for buffer, %m path to the buffer

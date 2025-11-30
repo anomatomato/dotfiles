@@ -26,5 +26,7 @@ keymap("n", "<leader><tab>k", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 vim.keymap.del("n", "<leader><tab>[")
 vim.keymap.del("n", "<leader><tab>]")
 
+-- Correcting spelling mistakes
+keymap("i", "<C-l>", "<C-g>u<Esc>[s1z=`]a<c-g>u", { desc = "Correct previous spelling mistake" })
 -- Escape terminal mode
 keymap("t", "<S-esc>", "<C-\\><C-n>", opts)
