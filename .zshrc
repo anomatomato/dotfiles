@@ -1,0 +1,240 @@
+#==============================================================================
+# 1. Profiling & Performance OptimIZATIONS
+#==============================================================================
+
+# Measure time taken by each component
+# zmodload zsh/zprof
+
+# Performance optimizations, see https://scottspence.com/posts/speeding-up-my-zsh-shell
+# Disable slow startup features
+export DISABLE_AUTO_UPDATE="true"
+export DISABLE_MAGIC_FUNCTIONS="true"
+export DISABLE_COMPFIX="true"
+
+# Fast compinit with cache
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' cache-path "$ZSH_CACHE_DIR/.zcompdump"
+zstyle ':completion:*' use-cache on
+
+# Defer plugin loads
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' lazy-cmd pnpm eslint prettier typescript nvim nv node copilot
+
+autoload -Uz compinit
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' "$HOME/.zcompdump" 2>/dev/null)" ]; then
+  compinit
+else
+  compinit -C
+fi
+
+# Parallel auto-update workers
+export ZSH_CUSTOM_AUTOUPDATE_NUM_WORKERS=8
+
+# Autosuggest config
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+
+#==============================================================================
+# 2. Environment & PATH
+#==============================================================================
+
+# Path to Oh My Zsh installation
+export ZSH="$HOME/.oh-my-zsh"
+
+# Homebrew on Linux
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('$HOME/apps/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$HOME/apps/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/apps/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/apps/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+
+#==============================================================================
+# 3. Prompt & Theme
+#==============================================================================
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Choose your Oh My Zsh theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Load custom Powerlevel10k config if it exists
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+
+#==============================================================================
+# 4. Start oh-my-zsh with plugin
+#==============================================================================
+
+plugins=(
+  git
+  zsh-autosuggestions
+  you-should-use
+  ls
+  autoupdate
+  nvm
+  evalcache
+  fast-syntax-highlighting
+)
+
+source "$ZSH/oh-my-zsh.sh"
+
+#==============================================================================
+# 5. Editor & Pager
+#==============================================================================
+
+# Choose editor (vim on SSH, nvim locally)
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
+# Vi-mode zsh
+bindkey -v
+
+# Bat & less integration
+export PAGER='less -RFX'
+export BAT_PAGER="$PAGER"
+export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\\[[0-9;]*m/, \"\", \$0); gsub(/.\\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
+
+alias bat='bat --color=always --paging=never'
+alias less='/home/linuxbrew/.linuxbrew/bin/bat --color=always --paging=always'
+
+
+#==============================================================================
+# 6. Aliases
+#==============================================================================
+
+# Directory shortcuts
+alias rep="cd $HOME/Repositories"
+alias 4sem="cd $HOME/TuBs/4.Semester"
+alias 5sem="cd $HOME/TuBs/5.Semester"
+
+# Safer remove
+alias rma="rm"
+alias rm="trash"
+
+# Python helpers
+alias py='ptpython'
+alias python='python3'
+
+# Neovim
+alias nv='nvim'
+
+# ld — lists only directories (no files)
+# lf — lists only files (no directories)
+# lh — lists only hidden files (no directories)
+# ll — lists everything with directories first
+# ls — lists only files sorted by size
+# lt — lists everything sorted by time updated
+
+# eza / tree
+alias ld='eza -lD --icons'
+alias lf='eza -lF --color=always | grep -v /'
+alias lh='eza -d .* --icons'
+alias lhh='eza -dl .* --icons --group-directories-first'
+alias lS='eza -1 --icons'
+
+function ezatree() {
+  eza --tree --level=$1 --icons
+}
+for i in {1..10}; do
+  alias "l${i}"="ezatree $i"
+done
+
+# fd tree
+alias at='tree --fromfile '
+
+# Copy path to clipboard
+alias cpp='pwd | xclip -selection clipboard'
+
+
+#==============================================================================
+# 7. Custom Functions
+#==============================================================================
+
+# yazi https://yazi-rs.github.io/docs/quick-start#shell-wrapper (auto `cd` to directory, where you quit)
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+
+#==============================================================================
+# 8. FZF Integration
+#==============================================================================
+
+# Load key-bindings + fuzzy completion
+source <(fzf --zsh)
+
+# Preview logic
+show_file_or_dir_preview="
+if [ -d {} ]; then
+  eza --tree --color=always {} | head -200
+else
+  bat -n --color=always --line-range :500 {};
+fi
+"
+
+export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
+# Default fzf alias with preview
+alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+
+# Custom completions with previews
+_fzf_comprun() {
+  local cmd=$1; shift
+  case "$cmd" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \${}'"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+  esac
+}
+eval "_fzf_comprun() { $(declare -f _fzf_comprun); }"
+
+
+#==============================================================================
+# 9. Secrets & Misc
+#==============================================================================
+
+# If you have a secrets file, source it
+[ -f ~/.zsh_secrets ] && source ~/.zsh_secrets
+
+# Display profile summary
+# zprof
+
+# Measure the time taken by each component
+# zmodload zsh/zprof
