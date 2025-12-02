@@ -15,6 +15,32 @@ export DISABLE_COMPFIX="true"
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' cache-path "$ZSH_CACHE_DIR/.zcompdump"
 zstyle ':completion:*' use-cache on
+# From https://github.com/Aloxaf/fzf-tab?tab=readme-ov-file#configure
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+# NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+zstyle ':completion:*' menu no
+# custom fzf flags
+# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
+# zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
+# To make fzf-tab follow FZF_DEFAULT_OPTS.
+# NOTE: This may lead to unexpected behavior since some flags break this plugin. See Aloxaf/fzf-tab#455.
+# zstyle ':fzf-tab:*' use-fzf-default-opts yes
+# switch group using `<` and `>`
+zstyle ':fzf-tab:*' switch-group '<' '>'
+# Use tmux popup
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+# https://github.com/Aloxaf/fzf-tab/wiki/Configuration#popup-min-size
+zstyle ':fzf-tab:*' popup-min-size 50 8
+# preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' popup-min-size 80 12
+# zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
 
 # Defer plugin loads
 zstyle ':omz:plugins:nvm' lazy yes
@@ -95,12 +121,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
   git
-  zsh-autosuggestions
   you-should-use
   ls
   autoupdate
   nvm
-  evalcache
+  fzf-tab
+  zsh-autosuggestions
   fast-syntax-highlighting
 )
 
@@ -223,7 +249,8 @@ _fzf_comprun() {
     *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
   esac
 }
-eval "_fzf_comprun() { $(declare -f _fzf_comprun); }"
+
+source "$HOME/.local/bin/fzf-git.sh"
 
 
 #==============================================================================
@@ -235,6 +262,9 @@ eval "_fzf_comprun() { $(declare -f _fzf_comprun); }"
 
 # Init zoxide
 eval "$(zoxide init zsh --cmd cd)"
+
+# Set higher key timeout for fzf-git
+export KEYTIMEOUT=100 # in milliseconds
 
 # Display profile summary
 # zprof
