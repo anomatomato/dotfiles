@@ -120,13 +120,13 @@ fi
 # Vi-mode zsh
 bindkey -v
 
+alias bat='bat --color=always --paging=never'
+alias less='/home/linuxbrew/.linuxbrew/bin/bat --color=always --paging=always'
+
 # Bat & less integration
 export PAGER='less -RFX'
 export BAT_PAGER="$PAGER"
 export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\\[[0-9;]*m/, \"\", \$0); gsub(/.\\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
-
-alias bat='bat --color=always --paging=never'
-alias less='/home/linuxbrew/.linuxbrew/bin/bat --color=always --paging=always'
 
 
 #==============================================================================
@@ -232,6 +232,9 @@ eval "_fzf_comprun() { $(declare -f _fzf_comprun); }"
 
 # If you have a secrets file, source it
 [ -f ~/.zsh_secrets ] && source ~/.zsh_secrets
+
+# Init zoxide
+eval "$(zoxide init zsh --cmd cd)"
 
 # Display profile summary
 # zprof
