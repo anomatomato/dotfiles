@@ -15,6 +15,7 @@ export DISABLE_COMPFIX="true"
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' cache-path "$ZSH_CACHE_DIR/.zcompdump"
 zstyle ':completion:*' use-cache on
+
 # From https://github.com/Aloxaf/fzf-tab?tab=readme-ov-file#configure
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
@@ -38,7 +39,8 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 # https://github.com/Aloxaf/fzf-tab/wiki/Configuration#popup-min-size
 zstyle ':fzf-tab:*' popup-min-size 60 8
 # preview directory's content with eza when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --icons --all $realpath'
+zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -1 --color=always --icons --all $realpath'
 zstyle ':fzf-tab:complete:cd:*' popup-min-size 80 12
 # zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
 
@@ -47,7 +49,7 @@ zstyle ':omz:plugins:nvm' lazy yes
 zstyle ':omz:plugins:nvm' lazy-cmd pnpm eslint prettier typescript nvim nv node copilot
 
 autoload -Uz compinit
-if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' "$HOME/.zcompdump" 2>/dev/null)" ]; then
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' "$ZSH_CACHE_DIR/.zcompdump" 2>/dev/null)" ]; then
   compinit
 else
   compinit -C
@@ -96,7 +98,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
-
 #==============================================================================
 # 3. Prompt & Theme
 #==============================================================================
@@ -116,7 +117,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 #==============================================================================
-# 4. Start oh-my-zsh with plugin
+# 4. Start oh-my-zsh with plugins
 #==============================================================================
 
 plugins=(
@@ -124,13 +125,18 @@ plugins=(
   you-should-use
   ls
   autoupdate
-  nvm
   fzf-tab
+  nvm
   zsh-autosuggestions
   fast-syntax-highlighting
 )
 
 source "$ZSH/oh-my-zsh.sh"
+
+# Ignore . and .. in autocompletions
+zstyle ':completion:*' special-dirs false
+_comp_options+=(globdots)
+
 
 #==============================================================================
 # 5. Editor & Pager
@@ -252,7 +258,7 @@ else
 fi
 "
 
-export FZF_DEFAULT_OPTS="--preview 'bat --color=always --style=full --line-range=:500 {}' --preview-window '<70(up)'"
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always --style=full --line-range=:500 {}' --preview-window '<70(up)' --tmux=80%"
 export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
