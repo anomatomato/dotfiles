@@ -19,7 +19,15 @@ opt.showbreak = "→ " -- show an arrow at wrapped lines
 -- opt.spell = true -- Enable spellchecking
 opt.spelllang = { "en", "de" } -- Set languages
 
+-- Map local leader, e.g. for vimtex
+vim.g.maplocalleader = ","
+
 -- LSP Server to use for python
 vim.g.lazyvim_python_lsp = "basedpyright"
 
+vim.filetype.add({
+  pattern = {
+    ["%.gitlab%-ci.*%.ya?ml"] = "yaml.gitlab",
+  },
+})
 -- vim.opt.winbar = "%=%m %f"-- %= separation for right alignment, %m modifier flag for buffer, %m path to the buffer
