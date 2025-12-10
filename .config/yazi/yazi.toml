@@ -48,7 +48,7 @@ open = [
 
 [plugin]
 prepend_preloaders = [
-  # { name = "*.pdf", run = "noop" }, # disable for pdf (.pdf) files
+  { name = "*.pdf", run = "noop" }, # disable for pdf (.pdf) files
 ]
 
 prepend_previewers = [

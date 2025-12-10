@@ -15,13 +15,13 @@ hash = "f8530ee84fee95dbcc26bb1d8d8019c7"
 
 [[plugin.deps]]
 use = "boydaihungst/restore"
-rev = "2161735"
-hash = "901741afba1979739b4650324265162e"
+rev = "6395e52"
+hash = "f107436db5d2cccccc11ab54bc97b761"
 
 [[plugin.deps]]
 use = "uhs-robert/recycle-bin"
-rev = "1762676"
-hash = "c77042b4296544a9edb4849338056039"
+rev = "53ad17c"
+hash = "80221fe740a6f251d35845d29391bea7"
 
 [[plugin.deps]]
 use = "AnirudhG07/rich-preview"
