@@ -34,6 +34,13 @@ return {
           events = {}, -- remove the default [ "TextChangedI", "InsertEnter" ] for clearing events
         },
       },
+      cli = {
+        ---@type sidekick.cli.Mux
+        mux = {
+          enabled = true,
+          create = "split",
+        },
+      },
     },
     keys = {
       {
