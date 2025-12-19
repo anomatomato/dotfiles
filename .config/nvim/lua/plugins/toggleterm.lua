@@ -1,3 +1,5 @@
+local prefix = "<leader>T"
+
 ---@type LazySpec
 return {
   {
@@ -6,7 +8,7 @@ return {
     ---@type wk.Opts
     opts = {
       spec = {
-        { "<leader>t", group = "+toggleterm" }, -- register <leader>t as a group key
+        { prefix, group = "+toggleterm" }, -- register <leader>t as a group key
       },
     },
   },
@@ -15,7 +17,7 @@ return {
     cmd = { "ToggleTerm" },
     keys = {
       {
-        "<leader>tK",
+        prefix .. "K",
         function()
           for _, term in pairs(require("toggleterm.terminal").get_all()) do
             term:shutdown()
@@ -25,7 +27,7 @@ return {
         desc = "Kill all terminals",
       },
       {
-        "<leader>tf",
+        prefix .. "f",
         function()
           local count = vim.v.count1
           require("toggleterm").toggle(count, 0, LazyVim.root.get(), "float")
@@ -33,7 +35,7 @@ return {
         desc = "ToggleTerm (float root_dir)",
       },
       {
-        "<leader>th",
+        prefix .. "h",
         function()
           local count = vim.v.count1
           require("toggleterm").toggle(count, 15, LazyVim.root.get(), "horizontal")
@@ -41,7 +43,7 @@ return {
         desc = "ToggleTerm (horizontal root_dir)",
       },
       {
-        "<leader>tv",
+        prefix .. "v",
         function()
           local count = vim.v.count1
           require("toggleterm").toggle(count, vim.o.columns * 0.4, LazyVim.root.get(), "vertical")
@@ -49,34 +51,34 @@ return {
         desc = "ToggleTerm (vertical root_dir)",
       },
       {
-        "<leader>ta",
+        prefix .. "a",
         "<cmd>ToggleTermToggleAll<cr>",
         desc = "Toggle all terminals",
       },
       {
-        "<leader>tr",
+        prefix .. "r",
         "<cmd>ToggleTermSetName<cr>",
         desc = "Set term name",
       },
       {
-        "<leader>tn",
+        prefix .. "n",
         "<cmd>TermNew<cr>",
         desc = "Open new terminal",
       },
       {
-        "<leader>ts",
+        prefix .. "s",
         "<cmd>TermSelect<cr>",
         desc = "Select term",
       },
       {
-        "<leader>tt",
+        prefix .. "t",
         function()
-          require("toggleterm").toggle(1, 100, LazyVim.root.get(), "tab")
+          require("toggleterm").toggle(1, 50, LazyVim.root.get(), "tab")
         end,
         desc = "ToggleTerm (tab root_dir)",
       },
       {
-        "<leader>tT",
+        prefix .. "T",
         function()
           require("toggleterm").toggle(1, 100, vim.loop.cwd(), "tab")
         end,
@@ -118,7 +120,7 @@ return {
       persist_size = true,
       direction = "horizontal" or "vertical" or "window" or "float",
       -- direction = "vertical",
-      close_on_exit = true, -- close the terminal window when the process exits
+      close_on_exit = false, -- close the terminal window when the process exits
       -- shell = vim.o.shell, -- change the default shell
       -- This field is only relevant if direction is set to 'float'
       -- float_opts = {

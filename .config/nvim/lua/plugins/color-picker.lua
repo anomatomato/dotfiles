@@ -1,3 +1,6 @@
+-- stylua: ignore
+if true then return {} end
+
 return {
   {
     "eero-lehtinen/oklch-color-picker.nvim",

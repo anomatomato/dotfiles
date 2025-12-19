@@ -16,7 +16,6 @@ return {
         "jinja", -- for work
         "jsdoc",
         "json",
-        "jsonc",
         "lua",
         "luadoc", -- parses comments (like @param)
         "markdown",
