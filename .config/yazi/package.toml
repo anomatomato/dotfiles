@@ -5,8 +5,8 @@ hash = "c538f3766b4b3bafbae3f0b7c3c3d763"
 
 [[plugin.deps]]
 use = "Lil-Dank/lazygit"
-rev = "8f37dc5"
-hash = "ee71543790f0ce3951161045a3787abd"
+rev = "ea20d05"
+hash = "b95f2d56dd4b2df1be338179a6f1f6c9"
 
 [[plugin.deps]]
 use = "AnirudhG07/plugins-yazi:copy-file-contents"
