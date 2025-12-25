@@ -1,0 +1,202 @@
+#!/usr/bin/bash
+
+# ============================================================
+# extend_screen.sh
+# Toggle a virtual second display for VNC (e.g., iPad as second monitor)
+#
+# Usage:
+#   ./extend_screen.sh          # Toggle on/off
+#   ./extend_screen.sh start    # Force start
+#   ./extend_screen.sh stop     # Force stop
+#   ./extend_screen.sh status   # Check current status
+# ============================================================
+
+# ============================================================
+# Configuration
+# ============================================================
+
+# State file to track if extended display is active
+STATE_FILE="/tmp/extended_right_screen"
+
+# Virtual display output name (check 'xrandr --query' for available outputs)
+VIRT_SCREEN="HDMI-2"
+
+# Main display output name
+MAIN_SCREEN="eDP-1"
+
+# Virtual display resolution
+VIRT_WIDTH=1400
+VIRT_HEIGHT=900
+VIRT_REFRESH=60
+
+# Mode name (must match in --newmode, --addmode, and --mode)
+MODE_NAME="${VIRT_WIDTH}x${VIRT_HEIGHT}_${VIRT_REFRESH}.00"
+
+# Main screen width (used to calculate where virtual screen starts)
+MAIN_WIDTH=1400
+
+# ============================================================
+# Functions
+# ============================================================
+
+start_extended_display() {
+  if [[ -f "$STATE_FILE" ]]; then
+    echo "Virtual display is already running."
+    echo "Use '$0 stop' to disable it first."
+    exit 1
+  fi
+
+  echo "Creating virtual monitor and starting x11vnc..."
+
+  # --newmode:  Create a new display mode with timing parameters
+  # These parameters define the pixel clock, resolution, and sync timings
+  # Generate with: cvt <width> <height> <refresh_rate>
+  xrandr --newmode "$MODE_NAME" 104.23 1400 1480 1632 1864 900 901 904 932 -HSync +Vsync
+
+  # --addmode:  Attach the mode to a specific output
+  # This makes the mode available for that output to use
+  xrandr --addmode "$VIRT_SCREEN" "$MODE_NAME"
+
+  # --output: Select which display output to configure
+  # --mode: Set the resolution/mode for that output
+  # --right-of: Position this display to the right of another
+  xrandr --output "$VIRT_SCREEN" --mode "$MODE_NAME" --right-of "$MAIN_SCREEN"
+
+  if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to enable virtual display."
+    exit 1
+  fi
+
+  # Start VNC server
+  # -clip WxH+X+Y :  Only capture a specific region of the screen
+  #                 W=width, H=height, X=x-offset, Y=y-offset
+  #                 Here:  1400x900 starting at x=1400 (right of main display)
+  # -nocursorshape:  Don't send cursor shape to client (client uses its own)
+  # -nocursorpos  : Don't send cursor position updates to client
+  # -repeat       : Allow keyboard key repeat
+  # -usepw        : Use password from ~/.vnc/passwd
+  x11vnc -usepw \
+    -clip "${VIRT_WIDTH}x${VIRT_HEIGHT}+${MAIN_WIDTH}+0" \
+    -nocursorshape \
+    -nocursorpos \
+    -repeat &
+
+  # Create state file to track that we're in "extended" mode
+  touch "$STATE_FILE"
+
+  echo ""
+  echo "============================================"
+  echo " Virtual display enabled on $VIRT_SCREEN"
+  echo " Resolution: ${VIRT_WIDTH}x${VIRT_HEIGHT}"
+  echo "============================================"
+  echo ""
+  echo " Connect VNC client to:"
+  echo "   $(hostname -I | awk '{print $1}'):5900"
+  echo ""
+}
+
+stop_extended_display() {
+  if [[ ! -f "$STATE_FILE" ]]; then
+    echo "Virtual display is not running."
+    exit 1
+  fi
+
+  echo "Resetting screen and killing x11vnc..."
+
+  # Kill any running x11vnc processes
+  if pgrep x11vnc >/dev/null; then
+    pkill x11vnc
+    echo "Stopped x11vnc."
+  fi
+
+  # Disable the virtual display
+  xrandr --output "$VIRT_SCREEN" --off
+
+  # Cleanup:  remove mode from output and delete it (optional, ignore errors)
+  xrandr --delmode "$VIRT_SCREEN" "$MODE_NAME" 2>/dev/null
+  xrandr --rmmode "$MODE_NAME" 2>/dev/null
+
+  # Remove state file
+  rm "$STATE_FILE"
+
+  echo "Virtual display disabled."
+}
+
+show_status() {
+  echo "============================================"
+  echo " extend_screen.sh status"
+  echo "============================================"
+
+  if [[ -f "$STATE_FILE" ]]; then
+    echo " State:  ACTIVE"
+  else
+    echo " State:  INACTIVE"
+  fi
+
+  echo ""
+  echo " x11vnc process:"
+  if pgrep x11vnc >/dev/null; then
+    echo "   Running (PID: $(pgrep x11vnc))"
+  else
+    echo "   Not running"
+  fi
+
+  echo ""
+  echo " Display outputs:"
+  xrandr --query | grep -E "^(eDP|HDMI|DP|VGA)" | while read line; do
+    echo "   $line"
+  done
+
+  echo ""
+  echo " Local IP: $(hostname -I | awk '{print $1}')"
+  echo "============================================"
+}
+
+show_help() {
+  echo "Usage: $0 [command]"
+  echo ""
+  echo "Commands:"
+  echo "  start   - Enable virtual display and start VNC server"
+  echo "  stop    - Disable virtual display and stop VNC server"
+  echo "  status  - Show current status"
+  echo "  help    - Show this help message"
+  echo ""
+  echo "If no command is given, toggles the display on/off."
+  echo ""
+  echo "Configuration (edit the script to change):"
+  echo "  Virtual screen:   $VIRT_SCREEN"
+  echo "  Main screen:     $MAIN_SCREEN"
+  echo "  Resolution:      ${VIRT_WIDTH}x${VIRT_HEIGHT}@${VIRT_REFRESH}Hz"
+}
+
+# ============================================================
+# Main
+# ============================================================
+
+case "${1:-toggle}" in
+start)
+  start_extended_display
+  ;;
+stop)
+  stop_extended_display
+  ;;
+status)
+  show_status
+  ;;
+help | --help | -h)
+  show_help
+  ;;
+toggle | "")
+  # Toggle:  if running, stop; if stopped, start
+  if [[ -f "$STATE_FILE" ]]; then
+    stop_extended_display
+  else
+    start_extended_display
+  fi
+  ;;
+*)
+  echo "Unknown command: $1"
+  show_help
+  exit 1
+  ;;
+esac
