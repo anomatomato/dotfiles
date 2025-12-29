@@ -1,6 +1,6 @@
 # Color scheme config
 [flavor]
-dark = "tokyo-night"
+dark = "catppuccin-mocha"
 
 [mgr]
-cwd = { fg = "#88e6e2" }
+# cwd = { fg = "#88e6e2" }
