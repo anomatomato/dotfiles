@@ -76,7 +76,7 @@ start_extended_display() {
   # -repeat       : Allow keyboard key repeat
   # -usepw        : Use password from ~/.vnc/passwd
   x11vnc -usepw \
-    -clip "${VIRT_WIDTH}x${VIRT_HEIGHT}+${MAIN_WIDTH}+0" \
+    -clip xinerama1 \
     -nocursorshape \
     -nocursorpos \
     -repeat &
