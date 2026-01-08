@@ -1,12 +1,12 @@
 [[plugin.deps]]
 use = "ahkohd/eza-preview"
-rev = "7b00863"
-hash = "c538f3766b4b3bafbae3f0b7c3c3d763"
+rev = "7a2d60f"
+hash = "eed8e19469f3dca38fd977eb938dd34e"
 
 [[plugin.deps]]
 use = "Lil-Dank/lazygit"
-rev = "a90fc71"
-hash = "894e801b788d0fca94627b58f8c9e1d4"
+rev = "0e56060"
+hash = "ab2e66065a94cca4886b303518e44bd8"
 
 [[plugin.deps]]
 use = "AnirudhG07/plugins-yazi:copy-file-contents"
@@ -15,20 +15,20 @@ hash = "f8530ee84fee95dbcc26bb1d8d8019c7"
 
 [[plugin.deps]]
 use = "boydaihungst/restore"
-rev = "6395e52"
-hash = "f107436db5d2cccccc11ab54bc97b761"
+rev = "4eda0bf"
+hash = "778941e7f1ebbacd60f4e254bb3c51de"
 
 [[plugin.deps]]
 use = "uhs-robert/recycle-bin"
-rev = "53ad17c"
-hash = "80221fe740a6f251d35845d29391bea7"
+rev = "69d7d4c"
+hash = "38dac2fc8f4b50bbdaa46e699720a54a"
 
 [[plugin.deps]]
 use = "AnirudhG07/rich-preview"
-rev = "831234e"
-hash = "ed3363e256e210593f0f8e4cec3e36a9"
+rev = "573b275"
+hash = "c3e2871c9ef244fd181f203791f9b0d2"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "9276ffa"
+rev = "4a1802a"
 hash = "b951d27afe197d154f6da9683b46c5f8"
