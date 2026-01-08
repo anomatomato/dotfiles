@@ -35,11 +35,16 @@ return {
                 typeCheckingMode = "basic", --  ["off", "basic", "standard", "strict", "recommended", "all"]
               },
             },
+            python = {
+              analysis = {
+                autoImportCompletions = false,
+              },
+            },
           },
         },
         ---@type lazyvim.lsp.Config
         pyright = {
-          -- enabled = true,
+          enabled = false,
           settings = {
             pyright = {
               analysis = {
@@ -49,6 +54,21 @@ return {
                 -- ignore = { "*" },
                 -- Using Ruff's import organizer
                 disableOrganizeImports = true,
+              },
+            },
+          },
+        },
+        ---@type lazyvim.lsp.Config
+        ty = {
+          enabled = true,
+          settings = {
+            ty = {
+              inlayHints = {
+                variableTypes = true,
+                callArgumentNames = true,
+              },
+              completions = {
+                autoImport = false,
               },
             },
           },
