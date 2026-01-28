@@ -23,7 +23,7 @@ opt.spelllang = { "en", "de" } -- Set languages
 vim.g.maplocalleader = ","
 
 -- LSP Server to use for python
-vim.g.lazyvim_python_lsp = "ty"
+-- vim.g.lazyvim_python_lsp = "basedpyright"
 
 vim.filetype.add({
   pattern = {

@@ -17,6 +17,10 @@ keymap("n", "<leader><tab>k", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 vim.keymap.del("n", "<leader><tab>[")
 vim.keymap.del("n", "<leader><tab>]")
 
+-- Buffers
+keymap("n", "<leader>bH", "<cmd>BufferLineMovePrev<cr>", { desc = "Move buffer prev" })
+keymap("n", "<leader>bL", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer next" })
+
 -- Correcting spelling mistakes
 keymap("i", "<C-l>", "<C-g>u<Esc>[s1z=`]a<c-g>u", { desc = "Correct previous spelling mistake" })
 -- Escape terminal mode
@@ -36,3 +40,7 @@ keymap("t", "<S-esc>", "<C-\\><C-n>", opts)
 -- keymap("n", "D", '"_D', { desc = "Delete until EOL without yanking", noremap = true })
 -- keymap("n", "c", '"_c', { desc = "Change without yanking", noremap = true })
 -- keymap("n", "C", '"_C', { desc = "Change until EOL without yanking", noremap = true })
+
+if vim.g.started_by_firenvim then
+  keymap({ "n", "x", "i", "s" }, "<C-s>", "<Cmd>silent write<CR>", { desc = "Save File (silent)" })
+end

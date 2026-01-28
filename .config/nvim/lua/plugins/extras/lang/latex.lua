@@ -21,6 +21,7 @@ return {
     init = function()
       -- vim.g.maplocalleader = ","
       vim.g.vimtex_view_method = "sioyek"
+      -- vim.g.vimtex_compiler_method = "luatex"
       -- ensure Okular is used with --unique so the same instance is reused
       -- vim.g.vimtex_view_general_viewer = "okular"
       -- vim.g.vimtex_view_general_options = "--unique file:@pdf\\#src:@line@tex"

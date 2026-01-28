@@ -17,7 +17,7 @@ return {
       servers = {
         ---@type lazyvim.lsp.Config
         basedpyright = {
-          -- enabled = false,
+          enabled = false,
           settings = {
             basedpyright = {
               analysis = {
@@ -44,7 +44,7 @@ return {
         },
         ---@type lazyvim.lsp.Config
         pyright = {
-          enabled = false,
+          enabled = true,
           settings = {
             pyright = {
               analysis = {
@@ -60,7 +60,7 @@ return {
         },
         ---@type lazyvim.lsp.Config
         ty = {
-          enabled = true,
+          enabled = false,
           settings = {
             ty = {
               inlayHints = {
@@ -81,31 +81,31 @@ return {
           },
         },
         ---@type lazyvim.lsp.Config
-        -- pylsp = {
-        --   enabled = false,
-        --   settings = {
-        --     pylsp = {
-        --       plugins = {
-        --         -- Linting
-        --         -- pylint = { enabled = false },
-        --         -- pyflakes = { enabled = false },
-        --         -- pycodestyle = { enabled = false },
-        --         -- mccabe = { enabled = false },
-        --         --
-        --         -- -- Formatting (disable if using ruff/black externally)
-        --         -- autopep8 = { enabled = false },
-        --         -- yapf = { enabled = false },
-        --
-        --         -- Type checking
-        --         pylsp_mypy = { enabled = true },
-        --
-        --         -- Rope for refactoring
-        --         rope_autoimport = { enabled = true },
-        --         rope_completion = { enabled = true },
-        --       },
-        --     },
-        --   },
-        -- },
+        pylsp = {
+          enabled = false,
+          settings = {
+            pylsp = {
+              plugins = {
+                -- Linting
+                -- pylint = { enabled = false },
+                -- pyflakes = { enabled = false },
+                -- pycodestyle = { enabled = false },
+                -- mccabe = { enabled = false },
+                --
+                -- -- Formatting (disable if using ruff/black externally)
+                -- autopep8 = { enabled = false },
+                -- yapf = { enabled = false },
+
+                -- Type checking
+                pylsp_mypy = { enabled = true },
+
+                -- Rope for refactoring
+                rope_autoimport = { enabled = true },
+                rope_completion = { enabled = true },
+              },
+            },
+          },
+        },
       },
     },
   },
