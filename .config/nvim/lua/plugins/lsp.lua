@@ -25,14 +25,19 @@ return {
       --   --  desc = "List workspace",
       --   --}
     end,
-    opts = {
-      ---@type lazyvim.lsp.Config
-      servers = {
-        -- configuration for all lsp servers
-        ["*"] = {
-          keys = {},
-        },
-      },
+  },
+
+  {
+    "mason-org/mason.nvim",
+    dependencies = { "RubixDev/mason-update-all", opts = {} },
+    cmd = {
+      "Mason",
+      "MasonInstall",
+      "MasonUninstall",
+      "MasonUninstallAll",
+      "MasonLog",
+      "MasonUpdate",
+      "MasonUpdateAll", -- this cmd is provided by mason-extra-cmds
     },
   },
 
