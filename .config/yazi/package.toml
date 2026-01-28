@@ -20,15 +20,30 @@ hash = "778941e7f1ebbacd60f4e254bb3c51de"
 
 [[plugin.deps]]
 use = "uhs-robert/recycle-bin"
-rev = "69d7d4c"
-hash = "38dac2fc8f4b50bbdaa46e699720a54a"
+rev = "fa68711"
+hash = "8714306b5cac6359edbacbf545fbd691"
 
 [[plugin.deps]]
 use = "AnirudhG07/rich-preview"
 rev = "573b275"
 hash = "c3e2871c9ef244fd181f203791f9b0d2"
 
+[[plugin.deps]]
+use = "mikavilpas/easyjump.yazi:easyjump"
+rev = "a92196b"
+hash = "dee6991cbf5f04f879be03218856d65"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "594b8a2"
+hash = "c9e628fc0312d198db22ae2fa74883b"
+
+[[plugin.deps]]
+use = "AminurAlam/yazi-plugins:preview-sqlite"
+rev = "688d133"
+hash = "e21bd1066bfd09c92fd0201cffec287f"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "4a1802a"
-hash = "b951d27afe197d154f6da9683b46c5f8"
+rev = "ca61658"
+hash = "8eabb4e88096f10905a6df62cfaadbf4"

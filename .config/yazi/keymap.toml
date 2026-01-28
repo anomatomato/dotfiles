@@ -101,5 +101,8 @@ prepend_keymap = [
     "r",
   ], run = "plugin recycle-bin -- restore", desc = "Restore from Trash" },
 
-
+  # Easyjump
+  { on = [
+    "i",
+  ], run = "plugin easyjump", desc = "easyjump" },
 ]
