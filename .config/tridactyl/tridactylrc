@@ -2,7 +2,7 @@
 set editorcmd /usr/bin/ghostty -e /home/linuxbrew/.linuxbrew/bin/nvim
 set hintstyles.bg none
 set hintstyles.fg none
-set smoothscroll true
+set smoothscroll false
 set hintfiltermode simple
 set hintchars jklöasdfghyuiopqwertnmzxcvb
 set searchurls.gh https://github.com/search?q=%s&type=repositories

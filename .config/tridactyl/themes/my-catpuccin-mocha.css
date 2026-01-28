@@ -54,8 +54,8 @@
   --tridactyl-hintspan-font-family: var(--font);
 
   /* Hint character tags */
-  --tridactyl-hintspan-fg: var(--base) !important;
-  --tridactyl-hintspan-bg: var(--green) !important;
+  --tridactyl-hintspan-fg: var(--base);
+  --tridactyl-hintspan-bg: var(--green);
 
   /* Element Highlights (using "none") */
   --tridactyl-hint-active-fg: none;
@@ -66,6 +66,16 @@
 
   /* Element Colors */
   --tridactyl-border: var(--lavender);
+  --tridactyl-border-image: linear-gradient(
+    90deg,
+    var(--red),
+    var(--peach),
+    var(--yellow),
+    var(--green),
+    var(--sky),
+    var(--blue),
+    var(--mauve)
+  );
   --tridactyl-completions-title: var(--blue);
   --tridactyl-completions-title-focused: var(--pink);
   --tridactyl-completions-url: var(--green);
@@ -73,7 +83,9 @@
 }
 #command-line-holder {
   order: 1;
-  border: 2px solid var(--tridactyl-border);
+  /* border: 2px solid var(--tridactyl-border); */
+  border: 2px solid;
+  border-image: var(--tridactyl-border-image) 1;
   background: var(--tridactyl-bg);
 }
 
@@ -82,17 +94,17 @@
 }
 
 #tridactyl-input {
-  padding: 1rem;
   color: var(--tridactyl-fg);
   width: 90%;
   font-size: 1.3rem;
   line-height: 1.5;
   background: var(--tridactyl-bg);
   padding-left: unset;
+  padding: 0.8rem 1rem;
 }
 
 #completions table {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 200;
   border-spacing: 0;
   table-layout: fixed;
@@ -140,11 +152,25 @@
   min-height: unset;
 }
 
-#completions table tr td.prefix,
-#completions table tr td.privatewindow,
-#completions table tr td.container,
-#completions table tr td.icon {
+/* #completions table tr td.icon,  */
+#completions td.prefix,
+#completions td.privatewindow,
+#completions td.container {
   display: none;
+}
+
+#completions tr .title,
+#completions td.excmd {
+  /* width: 50%; */
+  padding-left: 1rem;
+  color: var(--tridactyl-completions-title);
+}
+
+/* icon settings */
+#completions td.icon {
+  text-align: center;
+  vertical-align: middle;
+  padding-left: 0.5rem;
 }
 
 #completions .BufferCompletionSource table {
@@ -154,36 +180,33 @@
   table-layout: unset;
 }
 
-#completions table tr.BufferCompletionOption {
+#completions tr.BufferCompletionOption {
   white-space: wrap;
 }
-#completions table tr.BufferCompletionOption td.content {
+#completions tr.BufferCompletionOption .title {
+  padding: unset;
+}
+#completions tr.BufferCompletionOption td.content {
   width: auto;
-}
-
-#completions table tr .title,
-#completions table tr td.excmd {
-  /* width: 50%; */
   padding-left: 1rem;
-  color: var(--tridactyl-completions-title);
 }
 
-#completions table tr .content,
-#completions table tr td.documentation {
+#completions tr .content,
+#completions td.documentation {
   padding-right: 1rem;
 }
-#completions table tr.ExcmdCompletionOption .documentation {
+#completions tr.ExcmdCompletionOption .documentation {
   white-space: pre-line;
 }
 
-#completions table tr {
+#completions tr {
   white-space: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-#completions table tr td {
-  padding: 0.25rem 0;
+#completions tr td {
+  padding: 0.25rem 0.25rem;
 }
 
 #completions .sectionHeader {
