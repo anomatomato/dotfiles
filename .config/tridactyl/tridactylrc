@@ -1,6 +1,5 @@
 " General Settings
 set editorcmd /usr/bin/ghostty -e /home/linuxbrew/.linuxbrew/bin/nvim
-set theme catppuccin-mocha
 set hintstyles.bg none
 set hintstyles.fg none
 set smoothscroll true
@@ -16,3 +15,5 @@ bind j scrollline 10
 bind K tabprev
 bind J tabnext
 unbind <C-f>
+
+colors my-catpuccin-mocha
