@@ -1,5 +1,5 @@
 [user]
-	name = An Hoang
+	name = Anomatomato
   email = 55243106+anomatomato@users.noreply.github.com
 [pull]
   rebase = true
@@ -23,3 +23,8 @@
 
 [merge]
     conflictStyle = zdiff3
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
