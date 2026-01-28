@@ -105,4 +105,9 @@ prepend_keymap = [
   { on = [
     "i",
   ], run = "plugin easyjump", desc = "easyjump" },
+
+  # Ouch compress
+  { on = [
+    "C",
+  ], run = "plugin ouch", desc = "Compress with ouch" },
 ]

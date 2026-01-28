@@ -61,8 +61,8 @@ prepend_previewers = [
   #    { mime = "*.lang_type", run = "rich-preview"} # for particular language files eg. .py, .go., .lua, etc.
   # { mime = "*.pdf", run = "noop" }, # disable for pdf (.pdf) files
   # Archive preview
-  { mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", run = "ouch" },
-    { url = '*.sqlite3', run = 'preview-sqlite' },
+  { mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", run = "ouch --archive-icon='🗄️ ' --show-file-icons" },
+  { url = '*.sqlite3', run = 'preview-sqlite' },
   { mime = 'application/sqlite3', run = 'preview-sqlite' },
 ]
 
