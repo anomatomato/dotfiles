@@ -1,0 +1,18 @@
+" General Settings
+set editorcmd /usr/bin/ghostty -e /home/linuxbrew/.linuxbrew/bin/nvim
+set theme catppuccin-mocha
+set hintstyles.bg none
+set hintstyles.fg none
+set smoothscroll true
+set hintfiltermode simple
+set hintchars jklöasdfghyuiopqwertnmzxcvb
+set searchurls.gh https://github.com/search?q=%s&type=repositories
+set searchurls.sch https://scholar.google.com/scholar?q=
+set searchurls.y https://www.youtube.com/results?search_query=
+
+" Binds
+bind k scrollline -10
+bind j scrollline 10
+bind K tabprev
+bind J tabnext
+unbind <C-f>
