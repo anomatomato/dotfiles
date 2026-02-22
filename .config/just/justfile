@@ -1,0 +1,13 @@
+obsidian_path := "~/Documents/obsidian/"
+
+alias lg := log-timer
+alias lw := log-week
+
+[arg("from", help="The beginning date")]
+[doc("Log TaskNotes Pomodoro entries from a specific date (default to today)")]
+log-timer from="today":
+    mtnb timer log --from "$(date -d '{{ from }}' +%Y-%m-%d)" --to "$(date +%Y-%m-%d)" --path {{ obsidian_path }}
+
+[doc("Log TaskNotes Pomodoro entries for the current week (Monday to Today)")]
+log-week:
+    mtnb timer log --from "$(date -d 'last monday' +%Y-%m-%d)" --to "$(date +%Y-%m-%d)" --path {{ obsidian_path }}
