@@ -68,7 +68,7 @@ return {
                 callArgumentNames = true,
               },
               completions = {
-                autoImport = false,
+                autoImport = true,
               },
             },
           },
@@ -117,16 +117,16 @@ return {
         debug = true, -- enables you to run the VenvSelectLog command to view debug logs
       },
       -- own searches
-      search = {
-        my_miniconda_envs = {
-          command = "fd /python$ ~/apps/miniconda3/envs/ --no-ignore-vcs --full-path --color never -E /proc", -- python$ means the path must end with the word python
-          type = "anaconda",
-        },
-        my_miniconda_base = {
-          command = "fd /python$ ~/apps/miniconda3/bin/ --no-ignore-vcs --full-path --color never -E /proc",
-          type = "anaconda",
-        },
-      },
+      -- search = {
+      --   my_miniconda_envs = {
+      --     command = "fd /python$ ~/apps/miniconda3/envs/ --no-ignore-vcs --full-path --color never -E /proc", -- python$ means the path must end with the word python
+      --     type = "anaconda",
+      --   },
+      --   my_miniconda_base = {
+      --     command = "fd /python$ ~/apps/miniconda3/bin/ --no-ignore-vcs --full-path --color never -E /proc",
+      --     type = "anaconda",
+      --   },
+      -- },
     },
   },
 }
