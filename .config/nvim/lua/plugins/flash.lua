@@ -3,6 +3,7 @@ return {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
+    ---@module 'flash'
     ---@type Flash.Config
     opts = {
       -- jump labels
@@ -31,6 +32,7 @@ return {
   ---@type LazySpec
   "folke/which-key.nvim",
   event = "VeryLazy",
+  ---@module 'which-key'
   ---@type wk.Opts
   opts = {
     -- defaults = {

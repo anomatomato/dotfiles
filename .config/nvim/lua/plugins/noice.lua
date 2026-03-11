@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   "folke/noice.nvim",
+  ---@module 'noice'
   ---@type NoiceConfig
   opts = {
     presets = {
