@@ -4,7 +4,6 @@
 [include]
 # paths = ["/etc/topgrade.toml"]
 
-
 [misc]
 # On Unix systems, Topgrade should not be run as root, it
 # will run commands with sudo or equivalent where needed.
@@ -96,22 +95,26 @@ assume_yes = true
 # (default: true)
 # show_distribution_summary = false
 
-
 # Commands to run before anything
 [pre_commands]
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
 
-
 # Commands to run after anything
 [post_commands]
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
-
 
 # Custom commands
 [commands]
 # "Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 # "Custom command using interactive shell (unix)" = "-i vim_upgrade"
 
+"Oh-My-Zsh plugins" = "zsh -i -c 'upgrade_oh_my_zsh_custom'"
+"Brew HEAD" = "brew upgrade --fetch-HEAD"
+"Mason Nvim" = "nvim --headless -c 'autocmd User MasonUpdateAllComplete quitall' -c 'MasonUpdateAll'"
+"Tree sitter Nvim" = "nvim --headless -c 'TSUpdate' -c 'qa'"
+"Install Release" = "ir upgrade -y && ir upgrade --pkg -y"
+
+# "Bachelor Thesis Repo" = "just ~/TuBs/7.sem/ba/bachelorarbeit-an-hoang/update-all"
 
 [python]
 # enable_pip_review = true                         ###disabled by default
@@ -126,7 +129,6 @@ assume_yes = true
 # (default: false)
 # poetry_force_self_update = true
 
-
 [conda]
 # Additional named conda environments to update (`conda env update -n env_name`)
 # env_names = [
@@ -139,10 +141,8 @@ assume_yes = true
 #     "~/experiments/.conda/"
 # ]
 
-
 [composer]
 # self_update = true
-
 
 [brew]
 # For the BrewCask step
@@ -169,7 +169,6 @@ assume_yes = true
 # For the BrewFormula step
 # Upgrade formulae built from the HEAD branch; `brew upgrade --fetch-HEAD`
 # fetch_head = true
-
 
 [linux]
 # Arch Package Manager to use.
@@ -220,13 +219,11 @@ assume_yes = true
 # Extra Home Manager arguments
 # home_manager_arguments = ["--flake", "file"]
 
-
 [mandb]
 # Enable the mandb step (to update manual entries).
 # Mandb is updated in the background by a service on most systems by default.
 # (default: false)
 # enable = true
-
 
 [pkgfile]
 # Enable the pkgfile step (to update the pkgfile database).
@@ -234,17 +231,14 @@ assume_yes = true
 # (default: false)
 # enable = true
 
-
 [git]
 # How many repos to pull or fetch at max in parallel
 # max_concurrency = 5
 
 # Additional git repositories to pull or fetch
 # repos = [
-#     "~/src/*/",
-#     "~/.config/something"
+#   "~/apps/rofi-bluetooth/",
 # ]
-
 # Set to `false` to skip pulling/fetching the predefined git repos
 # pull_predefined = false
 
@@ -287,7 +281,6 @@ assume_yes = true
 # (default: false)
 # winget_use_sudo = true
 
-
 [chezmoi]
 # Exclude encrypted files from update
 # (default: false)
@@ -306,31 +299,25 @@ assume_yes = true
 # (default: false)
 # interactive = false
 
-
 [npm]
 # Use sudo if the NPM directory isn't owned by the current user
 # use_sudo = true
-
 
 [yarn]
 # Run `yarn global upgrade` with `sudo`
 # use_sudo = true
 
-
 [deno]
 # Upgrade deno executable to the given version.
 # version = "stable"
-
 
 [vim]
 # For `vim-plug`, execute `PlugUpdate!` instead of `PlugUpdate`
 # force_plug_update = true
 
-
 [firmware]
 # Offer to update firmware; if false just check for and display available updates
-# upgrade = true
-
+upgrade = true
 
 [vagrant]
 # Vagrant directories
@@ -342,11 +329,9 @@ assume_yes = true
 # Always suspend vagrant boxes instead of powering off
 # always_suspend = true
 
-
 [flatpak]
 # Use sudo for updating the system-wide installation
 # use_sudo = true
-
 
 [distrobox]
 # use_root = false
