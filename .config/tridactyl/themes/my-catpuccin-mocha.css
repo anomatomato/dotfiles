@@ -66,16 +66,16 @@
 
   /* Element Colors */
   --tridactyl-border: var(--lavender);
-  --tridactyl-border-image: linear-gradient(
-    90deg,
-    var(--red),
-    var(--peach),
-    var(--yellow),
-    var(--green),
-    var(--sky),
-    var(--blue),
-    var(--mauve)
-  );
+  /* --tridactyl-border-image: linear-gradient( */
+  /*   90deg, */
+  /*   var(--red), */
+  /*   var(--peach), */
+  /*   var(--yellow), */
+  /*   var(--green), */
+  /*   var(--sky), */
+  /*   var(--blue), */
+  /*   var(--mauve) */
+  /* ); */
   --tridactyl-completions-title: var(--blue);
   --tridactyl-completions-title-focused: var(--pink);
   --tridactyl-completions-url: var(--green);
@@ -83,9 +83,9 @@
 }
 #command-line-holder {
   order: 1;
-  /* border: 2px solid var(--tridactyl-border); */
-  border: 2px solid;
-  border-image: var(--tridactyl-border-image) 1;
+  border: 2px solid var(--tridactyl-border);
+  /* border: 2px solid; */
+  /* border-image: var(--tridactyl-border-image) 1; */
   background: var(--tridactyl-bg);
 }
 

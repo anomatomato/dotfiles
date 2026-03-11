@@ -5,6 +5,8 @@ set hintstyles.fg none
 set smoothscroll false
 set hintfiltermode simple
 set hintchars jklöasdfghyuiopqwertnmzxcvb
+" set hintfiltermode vimperator-reflow
+" set hintnames numeric
 set searchurls.gh https://github.com/search?q=%s&type=repositories
 set searchurls.sch https://scholar.google.com/scholar?q=
 set searchurls.y https://www.youtube.com/results?search_query=
@@ -14,6 +16,10 @@ bind k scrollline -10
 bind j scrollline 10
 bind K tabprev
 bind J tabnext
+bind i mode ignore
+" see https://github.com/tridactyl/tridactyl/issues/4746#issuecomment-1862569882
+bind ;; hint -;
+" bindurl tumblr.com f hint -c a
 unbind <C-f>
 
 colors my-catpuccin-mocha
