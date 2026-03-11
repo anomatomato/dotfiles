@@ -93,3 +93,7 @@ require("easyjump"):setup({
 	first_keys = "asdfgercwtvxbq", -- 14 keys
 	second_keys = "uiophjklnm,", -- 11 keys
 })
+
+require("fg"):setup({
+	default_action = "menu", -- nvim, jump
+})

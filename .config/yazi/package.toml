@@ -25,25 +25,35 @@ hash = "8714306b5cac6359edbacbf545fbd691"
 
 [[plugin.deps]]
 use = "AnirudhG07/rich-preview"
-rev = "573b275"
-hash = "c3e2871c9ef244fd181f203791f9b0d2"
+rev = "7d616ad"
+hash = "d64feec9761392cbc250d199ab4b8a3a"
 
 [[plugin.deps]]
 use = "mikavilpas/easyjump.yazi:easyjump"
-rev = "a92196b"
+rev = "5a6c986"
 hash = "dee6991cbf5f04f879be03218856d65"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
-rev = "594b8a2"
-hash = "c9e628fc0312d198db22ae2fa74883b"
+rev = "406ce6c"
+hash = "f5afc904d5106ee368c8aa2ded43bd74"
 
 [[plugin.deps]]
 use = "AminurAlam/yazi-plugins:preview-sqlite"
-rev = "688d133"
+rev = "1d28640"
 hash = "e21bd1066bfd09c92fd0201cffec287f"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "1962818"
+hash = "c887903a63a2ff520081b6d90a4b3392"
+
+[[plugin.deps]]
+use = "DreamMaoMao/fg"
+rev = "b9fb819"
+hash = "7d62f2eae04f77d13a21917c169b151b"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "ca61658"
-hash = "8eabb4e88096f10905a6df62cfaadbf4"
+rev = "c02c804"
+hash = "7dfe41c9c3d9be76da8a844263d0bbed"
