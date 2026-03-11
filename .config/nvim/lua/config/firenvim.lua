@@ -1,16 +1,27 @@
 vim.g.firenvim_config = {
   globalSettings = {
-    statusline = false, -- 👈 THIS removes the bar you see
-    cmdline = "neovim", -- optional: removes Firenvim cmdline overlay
+    alt = "all",
+    cmdlineTimeout = 3000,
     ["<C-w>"] = "noop",
   },
   localSettings = {
     [".*"] = {
       takeover = "once",
       selector = 'textarea:not([readonly], [aria-readonly]), div[role="textbox"]',
+      priority = 0,
+      cmdline = "neovim", -- optional: removes Firenvim cmdline overlay
+      statusline = false, -- 👈 THIS removes the bar you see
     },
     [".*chatgpt.com.*"] = {
       selector = 'div[id="prompt-textarea"]',
+    },
+    [".*duolingo.com.*"] = {
+      takeover = "never", -- disable
+      priority = 1,
+    },
+    [".*desmos.com.*"] = {
+      takeover = "never", -- disable
+      priority = 1,
     },
   },
 }
