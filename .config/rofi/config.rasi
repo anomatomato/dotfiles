@@ -1,5 +1,5 @@
 configuration {
-	modes: "combi,vscode-recent,powermenu";
+	modes: "combi,vscode-recent,calc,powermenu";
   font: "JetBrainsMono Nerd Font 16";
   terminal: "ghostty";
   icon-theme: "Papirus";
@@ -23,6 +23,22 @@ configuration {
   display-Network: " 󰤨 Network ";
   vscode-recent {
       display-name: " ﬏ Recent";
+  }
+  calc {
+        display-name: "🔢 Calc";
+        no-bold: false;
+        terse: true;
+        no-history: false;
+        no-persist-history: false;
+        automatic-save-to-history: true;
+        reuse-result: true;
+        calc-command-history: true;
+        calc-error-color: "Green";
+        // calc-command: "notify-send {result}";
+        // calc-command: "echo -n '{result}' | xclip -selection clipboard"; // copy to clipboard with kb-accept-custom
+        calc-command: "xdotool type --clearmodifiers '{result}' && echo -n '{result}' | xclip -selection clipboard"; // insert into cursor and copy to clipboard with kb-accept-custom
+        // hint-result: "Res: ";
+        hint-welcome: "🧮 Calculator";
   }
 
 	kb-remove-char-back: "BackSpace,Shift+BackSpace"; // removed Ctrl+l
