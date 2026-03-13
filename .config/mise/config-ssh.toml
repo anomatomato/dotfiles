@@ -1,0 +1,11 @@
+[tools]
+btop = "latest"
+delta = "latest"
+eza = "latest"
+fzf = "latest"
+just = "latest"
+neovim = "nightly"
+pipx = "latest"
+tmux = "latest"
+yazi = "latest"
+zoxide = "latest"
