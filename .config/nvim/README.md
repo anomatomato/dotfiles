@@ -4,9 +4,10 @@
 <a href="https://dotfyle.com/anomatomato/dotfiles-config-nvim"><img src="https://dotfyle.com/anomatomato/dotfiles-config-nvim/badges/leaderkey?style=flat" /></a>
 <a href="https://dotfyle.com/anomatomato/dotfiles-config-nvim"><img src="https://dotfyle.com/anomatomato/dotfiles-config-nvim/badges/plugin-manager?style=flat" /></a>
 
+
 ## Install Instructions
 
-> Install requires Neovim 0.9+. Always review the code before installing a configuration.
+ > Install requires Neovim 0.9+. Always review the code before installing a configuration.
 
 Clone the repository and install the plugins:
 
@@ -24,103 +25,88 @@ NVIM_APPNAME=anomatomato/dotfiles/.config/nvim nvim
 
 ### ai
 
-- [folke/sidekick.nvim](https://dotfyle.com/plugins/folke/sidekick.nvim)
-
++ [folke/sidekick.nvim](https://dotfyle.com/plugins/folke/sidekick.nvim)
 ### color
 
-- [eero-lehtinen/oklch-color-picker.nvim](https://dotfyle.com/plugins/eero-lehtinen/oklch-color-picker.nvim)
-
++ [eero-lehtinen/oklch-color-picker.nvim](https://dotfyle.com/plugins/eero-lehtinen/oklch-color-picker.nvim)
 ### colorscheme
 
-- [folke/tokyonight.nvim](https://dotfyle.com/plugins/folke/tokyonight.nvim)
-- [ellisonleao/gruvbox.nvim](https://dotfyle.com/plugins/ellisonleao/gruvbox.nvim)
-
++ [folke/tokyonight.nvim](https://dotfyle.com/plugins/folke/tokyonight.nvim)
++ [ellisonleao/gruvbox.nvim](https://dotfyle.com/plugins/ellisonleao/gruvbox.nvim)
 ### completion
 
-- [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
-- [saghen/blink.cmp](https://dotfyle.com/plugins/saghen/blink.cmp)
-
++ [saghen/blink.cmp](https://dotfyle.com/plugins/saghen/blink.cmp)
++ [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
 ### diagnostics
 
-- [folke/trouble.nvim](https://dotfyle.com/plugins/folke/trouble.nvim)
-
++ [folke/trouble.nvim](https://dotfyle.com/plugins/folke/trouble.nvim)
 ### editing-support
 
-- [folke/snacks.nvim](https://dotfyle.com/plugins/folke/snacks.nvim)
-- [jake-stewart/multicursor.nvim](https://dotfyle.com/plugins/jake-stewart/multicursor.nvim)
-
++ [folke/snacks.nvim](https://dotfyle.com/plugins/folke/snacks.nvim)
++ [jake-stewart/multicursor.nvim](https://dotfyle.com/plugins/jake-stewart/multicursor.nvim)
 ### file-explorer
 
-- [mikavilpas/yazi.nvim](https://dotfyle.com/plugins/mikavilpas/yazi.nvim)
-
++ [mikavilpas/yazi.nvim](https://dotfyle.com/plugins/mikavilpas/yazi.nvim)
 ### formatting
 
-- [stevearc/conform.nvim](https://dotfyle.com/plugins/stevearc/conform.nvim)
-
++ [stevearc/conform.nvim](https://dotfyle.com/plugins/stevearc/conform.nvim)
 ### fuzzy-finder
 
-- [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
-
++ [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
 ### git
 
-- [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
-
++ [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
 ### icon
 
-- [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
-
++ [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
 ### keybinding
 
-- [folke/which-key.nvim](https://dotfyle.com/plugins/folke/which-key.nvim)
-
++ [folke/which-key.nvim](https://dotfyle.com/plugins/folke/which-key.nvim)
 ### lsp
 
-- [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
-- [jose-elias-alvarez/typescript.nvim](https://dotfyle.com/plugins/jose-elias-alvarez/typescript.nvim)
-
++ [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
++ [jose-elias-alvarez/typescript.nvim](https://dotfyle.com/plugins/jose-elias-alvarez/typescript.nvim)
 ### lsp-installer
 
-- [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
-
++ [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
 ### markdown-and-latex
 
-- [MeanderingProgrammer/render-markdown.nvim](https://dotfyle.com/plugins/MeanderingProgrammer/render-markdown.nvim)
-
++ [MeanderingProgrammer/render-markdown.nvim](https://dotfyle.com/plugins/MeanderingProgrammer/render-markdown.nvim)
 ### motion
 
-- [folke/flash.nvim](https://dotfyle.com/plugins/folke/flash.nvim)
-
++ [folke/flash.nvim](https://dotfyle.com/plugins/folke/flash.nvim)
 ### nvim-dev
 
-- [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
-
++ [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
 ### plugin-manager
 
-- [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
-
++ [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
 ### preconfigured
 
-- [LazyVim/LazyVim](https://dotfyle.com/plugins/LazyVim/LazyVim)
++ [LazyVim/LazyVim](https://dotfyle.com/plugins/LazyVim/LazyVim)
+### scrollbar
 
++ [petertriho/nvim-scrollbar](https://dotfyle.com/plugins/petertriho/nvim-scrollbar)
+### search
+
++ [kevinhwang91/nvim-hlslens](https://dotfyle.com/plugins/kevinhwang91/nvim-hlslens)
 ### statusline
 
-- [nvim-lualine/lualine.nvim](https://dotfyle.com/plugins/nvim-lualine/lualine.nvim)
-
++ [nvim-lualine/lualine.nvim](https://dotfyle.com/plugins/nvim-lualine/lualine.nvim)
 ### syntax
 
-- [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
-- [kylechui/nvim-surround](https://dotfyle.com/plugins/kylechui/nvim-surround)
-
++ [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
++ [kylechui/nvim-surround](https://dotfyle.com/plugins/kylechui/nvim-surround)
 ### terminal-integration
 
-- [akinsho/toggleterm.nvim](https://dotfyle.com/plugins/akinsho/toggleterm.nvim)
-
++ [akinsho/toggleterm.nvim](https://dotfyle.com/plugins/akinsho/toggleterm.nvim)
 ### utility
 
-- [SUSTech-data/neopyter](https://dotfyle.com/plugins/SUSTech-data/neopyter)
-
++ [folke/noice.nvim](https://dotfyle.com/plugins/folke/noice.nvim)
++ [SUSTech-data/neopyter](https://dotfyle.com/plugins/SUSTech-data/neopyter)
 ## Language Servers
 
-- html
++ html
 
-This readme was generated by [Dotfyle](https://dotfyle.com)
+
+ This readme was generated by [Dotfyle](https://dotfyle.com)
