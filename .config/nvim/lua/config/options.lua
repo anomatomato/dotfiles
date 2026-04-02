@@ -31,3 +31,6 @@ vim.filetype.add({
   },
 })
 -- vim.opt.winbar = "%=%m %f"-- %= separation for right alignment, %m modifier flag for buffer, %m path to the buffer
+
+-- Enable built-in Undo-Tree
+vim.cmd("packadd nvim.undotree")

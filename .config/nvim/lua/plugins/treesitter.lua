@@ -6,11 +6,13 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
+      opts.auto_install = true
       -- add tsx and treesitter
       vim.list_extend(opts.ensure_installed, {
         "bash",
         "c",
         "diff",
+        "comment",
         "html",
         "javascript",
         "jinja", -- for work

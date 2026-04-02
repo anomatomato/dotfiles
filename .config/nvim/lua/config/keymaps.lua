@@ -26,6 +26,9 @@ keymap("i", "<C-l>", "<C-g>u<Esc>[s1z=`]a<c-g>u", { desc = "Correct previous spe
 -- Escape terminal mode
 keymap("t", "<S-esc>", "<C-\\><C-n>", opts)
 
+-- UndoTree
+keymap("n", "<leader>uu", "<cmd>Undotree<cr>", { desc = "Undotree" })
+
 -- J,K: move faster,
 -- keymap("n", "<leader>j", "J", { noremap = true, silent = true, desc = "Join lower line" })
 -- keymap({ "n", "v" }, "J", "5j", opts)
