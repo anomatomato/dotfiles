@@ -1,5 +1,5 @@
 configuration {
-	modes: "combi,vscode-recent,calc,powermenu";
+  modes: "combi,vscode-recent,calc,sound:rofi-sound,powermenu";
   font: "JetBrainsMono Nerd Font 16";
   terminal: "ghostty";
   icon-theme: "Papirus";
@@ -39,6 +39,9 @@ configuration {
         calc-command: "xdotool type --clearmodifiers '{result}' && echo -n '{result}' | xclip -selection clipboard"; // insert into cursor and copy to clipboard with kb-accept-custom
         // hint-result: "Res: ";
         hint-welcome: "🧮 Calculator";
+  }
+  sound {
+    display-name: "🔊 Sound";
   }
 
 	kb-remove-char-back: "BackSpace,Shift+BackSpace"; // removed Ctrl+l
