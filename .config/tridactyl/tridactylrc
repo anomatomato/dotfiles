@@ -14,9 +14,14 @@ set searchurls.y https://www.youtube.com/results?search_query=
 " Binds
 bind k scrollline -10
 bind j scrollline 10
+bind d scrollpage 0.5
+bind u scrollpage -0.5
+unbind <C-d>
+unbind <C-u>
 bind K tabprev
 bind J tabnext
 bind i mode ignore
+
 " see https://github.com/tridactyl/tridactyl/issues/4746#issuecomment-1862569882
 bind ;; hint -;
 " bindurl tumblr.com f hint -c a
