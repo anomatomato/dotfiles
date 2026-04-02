@@ -112,7 +112,7 @@ assume_yes = true
 "Brew HEAD" = "brew upgrade --fetch-HEAD"
 "Mason Nvim" = "nvim --headless -c 'autocmd User MasonUpdateAllComplete quitall' -c 'MasonUpdateAll'"
 "Tree sitter Nvim" = "nvim --headless -c 'TSUpdate' -c 'qa'"
-"Install Release" = "ir upgrade -y && ir upgrade --pkg -y"
+"Install Release" = "ir upgrade --pkg -y"
 
 # "Bachelor Thesis Repo" = "just ~/TuBs/7.sem/ba/bachelorarbeit-an-hoang/update-all"
 

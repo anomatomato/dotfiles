@@ -7,6 +7,7 @@ repos = [
   "~/apps/rofi-bluetooth/",
   "~/apps/rofi-vscode-mode/",
   "~/apps/rofi-calc/",
+  "~/apps/rofi-mixer/",
   "~/apps/sioyek/",
   "~/apps/fzf-git.sh/",
 ]
