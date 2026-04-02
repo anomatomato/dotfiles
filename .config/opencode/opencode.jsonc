@@ -1,0 +1,43 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "experimental": {
+    "openTelemetry": false,
+  },
+  "tools": {
+    "websearch": true,
+    "codesearch": true,
+  },
+  "plugin": [
+    "@plannotator/opencode@latest",
+    "@tarquinen/opencode-dcp@latest",
+    "superpowers@git+https://github.com/obra/superpowers.git",
+    "understand-anything@git+https://github.com/Lum1104/Understand-Anything.git",
+    "cc-safety-net",
+    "oh-my-opencode-slim",
+  ],
+  "mcp": {
+    "zotero": {
+      "type": "local",
+      "command": ["zotero-mcp", "serve"],
+      "enabled": false,
+    },
+    "deepwiki": {
+      "type": "remote",
+      "url": "https://mcp.deepwiki.com/mcp",
+      "enabled": false,
+    },
+    "github": {
+      "type": "remote",
+      "url": "https://github.com/github/github-mcp-server#local-github-mcp-server",
+      "enabled": false,
+    },
+  },
+  "agent": {
+    "explore": {
+      "disable": true,
+    },
+    "general": {
+      "disable": true,
+    },
+  },
+}
