@@ -15,8 +15,8 @@ hash = "f8530ee84fee95dbcc26bb1d8d8019c7"
 
 [[plugin.deps]]
 use = "boydaihungst/restore"
-rev = "4eda0bf"
-hash = "778941e7f1ebbacd60f4e254bb3c51de"
+rev = "0e08704"
+hash = "e4d7c06510b4fe5f64ae31fbb4e017d6"
 
 [[plugin.deps]]
 use = "uhs-robert/recycle-bin"
@@ -30,7 +30,7 @@ hash = "d64feec9761392cbc250d199ab4b8a3a"
 
 [[plugin.deps]]
 use = "mikavilpas/easyjump.yazi:easyjump"
-rev = "daadd56"
+rev = "e6c1aa7"
 hash = "dee6991cbf5f04f879be03218856d65"
 
 [[plugin.deps]]
@@ -42,11 +42,6 @@ hash = "f5afc904d5106ee368c8aa2ded43bd74"
 use = "AminurAlam/yazi-plugins:preview-sqlite"
 rev = "1d28640"
 hash = "e21bd1066bfd09c92fd0201cffec287f"
-
-[[plugin.deps]]
-use = "yazi-rs/plugins:smart-filter"
-rev = "e84f4fe"
-hash = "c887903a63a2ff520081b6d90a4b3392"
 
 [[plugin.deps]]
 use = "DreamMaoMao/fg"

@@ -114,7 +114,7 @@ prepend_keymap = [
   { on = [
     "f",
     "f",
-  ], run = "plugin smart-filter", desc = "Smart filter" },
+  ], run = "filter --smart", desc = "Smart filter" },
 
   { on = [
     "f",
