@@ -30,7 +30,7 @@ hash = "d64feec9761392cbc250d199ab4b8a3a"
 
 [[plugin.deps]]
 use = "mikavilpas/easyjump.yazi:easyjump"
-rev = "e6c1aa7"
+rev = "17498a5"
 hash = "dee6991cbf5f04f879be03218856d65"
 
 [[plugin.deps]]
@@ -40,8 +40,8 @@ hash = "f5afc904d5106ee368c8aa2ded43bd74"
 
 [[plugin.deps]]
 use = "AminurAlam/yazi-plugins:preview-sqlite"
-rev = "1d28640"
-hash = "e21bd1066bfd09c92fd0201cffec287f"
+rev = "e2b0734"
+hash = "330b9ebc435f4b6a5ac40019de9ace56"
 
 [[plugin.deps]]
 use = "DreamMaoMao/fg"
@@ -50,5 +50,5 @@ hash = "7d62f2eae04f77d13a21917c169b151b"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "9511cb0"
+rev = "0670801"
 hash = "7dfe41c9c3d9be76da8a844263d0bbed"
