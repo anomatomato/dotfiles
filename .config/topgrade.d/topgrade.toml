@@ -109,7 +109,6 @@ assume_yes = true
 # "Custom command using interactive shell (unix)" = "-i vim_upgrade"
 
 "Oh-My-Zsh plugins" = "zsh -i -c 'upgrade_oh_my_zsh_custom'"
-"Brew HEAD" = "brew upgrade --fetch-HEAD"
 "Mason Nvim" = "nvim --headless -c 'autocmd User MasonUpdateAllComplete quitall' -c 'MasonUpdateAll'"
 "Tree sitter Nvim" = "nvim --headless -c 'TSUpdate' -c 'qa'"
 "Install Release" = "ir upgrade --pkg -y"
@@ -168,7 +167,7 @@ assume_yes = true
 
 # For the BrewFormula step
 # Upgrade formulae built from the HEAD branch; `brew upgrade --fetch-HEAD`
-# fetch_head = true
+fetch_head = true
 
 [linux]
 # Arch Package Manager to use.
