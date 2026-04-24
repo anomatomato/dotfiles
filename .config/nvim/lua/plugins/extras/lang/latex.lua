@@ -16,6 +16,36 @@ return {
     },
   },
   {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        ---@type lazyvim.lsp.Config
+        texlab = {
+          enabled = true,
+          settings = {
+            texlab = {
+              chktex = {
+                onOpenAndSave = true, -- Lint using chktex after opening and saving a file.
+                onEdit = false, -- Lint using chktex after editing a file.
+              },
+            },
+          },
+        },
+        ---@type lazyvim.lsp.Config
+        ltex_plus = {
+          enabled = true,
+          settings = {
+            ltex = {
+              dictionary = {
+                ["en-US"] = { "MIQCP", "Gurobi" },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+  {
     "lervag/vimtex",
     lazy = false, -- we don't want to lazy load VimTeX
     init = function()
