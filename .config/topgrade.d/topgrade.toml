@@ -15,7 +15,7 @@
 # Run `sudo -v` to cache credentials at the start of the run
 # This avoids a blocking password prompt in the middle of an unattended run
 # (default: false)
-# pre_sudo = false
+pre_sudo = false
 
 # Sudo command to be used
 # sudo_command = "sudo"
@@ -112,8 +112,7 @@ assume_yes = true
 "Mason Nvim" = "nvim --headless -c 'autocmd User MasonUpdateAllComplete quitall' -c 'MasonUpdateAll'"
 "Tree sitter Nvim" = "nvim --headless -c 'TSUpdate' -c 'qa'"
 "Install Release" = "ir upgrade --pkg -y"
-
-# "Bachelor Thesis Repo" = "just ~/TuBs/7.sem/ba/bachelorarbeit-an-hoang/update-all"
+"Bachelor Thesis Repo" = "just ~/TuBs/7.sem/ba/bachelorarbeit-an-hoang/update-all"
 
 [python]
 # enable_pip_review = true                         ###disabled by default
@@ -194,7 +193,8 @@ fetch_head = true
 
 # pamac_arguments = "--no-devel"
 
-# enable_tlmgr = true
+# Enable tex live
+enable_tlmgr = true
 
 # emerge_sync_flags = "-q"
 
