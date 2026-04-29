@@ -22,9 +22,15 @@
     dark = true      # or light = true, or omit for auto-detection
 
 [merge]
-    conflictStyle = zdiff3
+	conflictStyle = zdiff3
+	tool = nvim
+[mergetool "nvim"]
+	cmd = nvim \"$MERGED\" -c "CodeDiff merge \"$MERGED\""
+[mergetool]
+  prompt = false
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
