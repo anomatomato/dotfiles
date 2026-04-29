@@ -16,6 +16,11 @@ return {
     opts = {
       servers = {
         ---@type lazyvim.lsp.Config
+        pyrefly = {
+          enabled = true,
+          settings = {},
+        },
+        ---@type lazyvim.lsp.Config
         basedpyright = {
           enabled = false,
           settings = {
