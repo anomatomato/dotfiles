@@ -33,7 +33,7 @@ return {
         },
         ---@type lazyvim.lsp.Config
         ltex_plus = {
-          enabled = true,
+          enabled = false,
           settings = {
             ltex = {
               dictionary = {
