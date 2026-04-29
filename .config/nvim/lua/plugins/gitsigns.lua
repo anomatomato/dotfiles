@@ -6,4 +6,8 @@ return {
       current_line_blame = true,
     },
   },
+  {
+    "esmuellert/codediff.nvim",
+    cmd = "CodeDiff",
+  },
 }
