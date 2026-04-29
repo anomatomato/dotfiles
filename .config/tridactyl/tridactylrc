@@ -11,6 +11,9 @@ set searchurls.gh https://github.com/search?q=%s&type=repositories
 set searchurls.sch https://scholar.google.com/scholar?q=
 set searchurls.y https://www.youtube.com/results?search_query=
 
+" see https://github.com/tridactyl/tridactyl/issues/158#issuecomment-362900297
+autocmd DocStart overleaf.com/project/.* mode ignore
+
 " Binds
 bind k scrollline -10
 bind j scrollline 10
