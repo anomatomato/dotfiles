@@ -30,7 +30,7 @@ hash = "d64feec9761392cbc250d199ab4b8a3a"
 
 [[plugin.deps]]
 use = "mikavilpas/easyjump.yazi:easyjump"
-rev = "cb79d69"
+rev = "0f9ab0f"
 hash = "dee6991cbf5f04f879be03218856d65"
 
 [[plugin.deps]]
@@ -40,7 +40,7 @@ hash = "f5afc904d5106ee368c8aa2ded43bd74"
 
 [[plugin.deps]]
 use = "AminurAlam/yazi-plugins:preview-sqlite"
-rev = "e2b0734"
+rev = "8ed61d7"
 hash = "330b9ebc435f4b6a5ac40019de9ace56"
 
 [[plugin.deps]]
