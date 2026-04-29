@@ -59,4 +59,21 @@ return {
       -- vim.g.vimtex_compiler_progname = "nvr"
     end,
   },
+  {
+    "saghen/blink.cmp",
+    enabled = true,
+
+    dependencies = {
+      "micangl/cmp-vimtex", -- vim-cmp source for VimTeX completions
+      "saghen/blink.compat", -- adapter so blink can use nvim-cmp sources
+    },
+    opts = function(_, opts)
+      opts.sources = opts.sources or {}
+      opts.sources.compat = opts.sources.compat or {}
+
+      if not vim.tbl_contains(opts.sources.compat, "vimtex") then
+        table.insert(opts.sources.compat, "vimtex") -- add vimtex completions to blink, e.g. for \gls
+      end
+    end,
+  },
 }
