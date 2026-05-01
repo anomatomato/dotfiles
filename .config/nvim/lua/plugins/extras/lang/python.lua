@@ -49,7 +49,7 @@ return {
         },
         ---@type lazyvim.lsp.Config
         pyright = {
-          enabled = true,
+          enabled = false,
           settings = {
             pyright = {
               analysis = {
