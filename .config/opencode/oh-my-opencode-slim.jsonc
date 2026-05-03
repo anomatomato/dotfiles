@@ -1,0 +1,105 @@
+{
+  "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
+  "preset": "openai+copilot",
+  "presets": {
+    "openai+copilot": {
+      "orchestrator": {
+        "model": "openai/gpt-5.5-fast",
+        "variant": "high",
+        "skills": ["*"],
+        "mcps": ["*", "!context7"],
+      },
+      "oracle": {
+        "model": "openai/gpt-5.5-fast",
+        "variant": "high",
+        "skills": ["simplify"],
+        "mcps": [],
+      },
+      "librarian": {
+        "model": "openai/gpt-5.4-mini",
+        "variant": "low",
+        "skills": [],
+        "mcps": ["websearch", "context7", "grep_app", "zotero", "deepwiki"],
+      },
+      "explorer": {
+        "model": "openai/gpt-5.4-mini",
+        "variant": "low",
+        "skills": [],
+        "mcps": [],
+      },
+      "designer": {
+        "model": "github-copilot/gemini-3.1-pro-preview",
+        "variant": "medium",
+        "skills": ["agent-browser"],
+        "mcps": [],
+      },
+      "fixer": {
+        "model": "openai/gpt-5.3-codex",
+        "variant": "low",
+        "skills": [],
+        "mcps": [],
+      },
+    },
+  },
+  "council": {
+    "master": { "model": "openai/gpt-5.5-fast" },
+    "presets": {
+      "default": {
+        "alpha": { "model": "openai/gpt-5.4-mini" },
+        "beta": { "model": "github-copilot/gemini-3.1-pro-preview" },
+        "gamma": { "model": "openai/gpt-5.3-codex" },
+      },
+    },
+  },
+  "fallback": {
+    "enabled": true,
+    "timeoutMs": 60000,
+    "retryDelayMs": 500,
+    "chains": {
+      "orchestrator": [
+        "opencode/minimax-m2.5-free",
+        "opencode/big-pickle",
+        "github-copilot/claude-sonnet-4.6",
+        "openrouter/z-ai/glm-5",
+      ],
+      "oracle": [
+        "openai/gpt-5.3-codex",
+        "opencode/big-pickle",
+        "opencode/minimax-m2.5-free",
+        "github-copilot/claude-opus-4.6",
+        "github-copilot/gemini-3.1-pro-preview",
+        "openrouter/z-ai/glm-5",
+      ],
+      "librarian": [
+        "opencode/nemotron-3-super-free",
+        "openrouter/xiaomi/mimo-v2-omni",
+        "openrouter/z-ai/glm-4.7-flash",
+      ],
+      "explorer": [
+        "opencode/nemotron-3-super-free",
+        "openrouter/xiaomi/mimo-v2-omni",
+        "openrouter/x-ai/grok-code-fast-1",
+        "openrouter/deepseek/deepseek-v3.2",
+      ],
+      "designer": [
+        "openai/gpt-5.3-codex",
+        "opencode/big-pickle",
+        "openai/gpt-5.3-codex-spark",
+        "github-copilot/gemini-3.1-pro-preview",
+        "github-copilot/claude-sonnet-4.6",
+        "openrouter/xiaomi/mimo-v2-pro",
+      ],
+      "fixer": [
+        "openai/gpt-5.3-codex",
+        "opencode/big-pickle",
+        "github-copilot/claude-sonnet-4.6",
+        "openrouter/z-ai/glm-5",
+      ],
+    },
+  },
+  "tmux": {
+    "enabled": false, // Enable pane monitoring
+    "layout": "main-vertical",
+    "main_pane_size": 60, // Main pane size as percentage (20–80)
+  },
+}

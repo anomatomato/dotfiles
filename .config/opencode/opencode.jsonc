@@ -8,12 +8,18 @@
     "codesearch": true,
   },
   "plugin": [
-    "@plannotator/opencode@latest",
-    "@tarquinen/opencode-dcp@latest",
-    "superpowers@git+https://github.com/obra/superpowers.git",
-    "understand-anything@git+https://github.com/Lum1104/Understand-Anything.git",
     "cc-safety-net",
+    "@cortexkit/opencode-magic-context@latest",
     "oh-my-opencode-slim",
+    "superpowers@git+https://github.com/obra/superpowers.git",
+    "@plannotator/opencode@latest",
+    // [
+    //   "@plannotator/opencode@latest",
+    //   {
+    //     "workflow": "plan-agent",
+    //     "planningAgents": ["plan", "orchestrator"],
+    //   },
+    // ],
   ],
   "mcp": {
     "zotero": {
@@ -41,4 +47,8 @@
     },
   },
   "lsp": true,
+  "compaction": {
+    "auto": false,
+    "prune": false,
+  },
 }
