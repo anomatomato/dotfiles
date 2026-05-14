@@ -1,12 +1,12 @@
 [[plugin.deps]]
 use = "ahkohd/eza-preview"
-rev = "7a2d60f"
-hash = "eed8e19469f3dca38fd977eb938dd34e"
+rev = "dc9c103"
+hash = "949fc14ee6b6f8565ac7012d338b37c0"
 
 [[plugin.deps]]
 use = "Lil-Dank/lazygit"
-rev = "8c4086c"
-hash = "85316b5e9abeae2531d3e5d02a094381"
+rev = "e73fd74"
+hash = "6ea5f37c7f219671ec504cb8311f889d"
 
 [[plugin.deps]]
 use = "AnirudhG07/plugins-yazi:copy-file-contents"
@@ -30,8 +30,8 @@ hash = "d64feec9761392cbc250d199ab4b8a3a"
 
 [[plugin.deps]]
 use = "mikavilpas/easyjump.yazi:easyjump"
-rev = "0062d17"
-hash = "dee6991cbf5f04f879be03218856d65"
+rev = "10da026"
+hash = "b976709df0f6d3341736f053e87b2b8"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
@@ -40,8 +40,8 @@ hash = "f5afc904d5106ee368c8aa2ded43bd74"
 
 [[plugin.deps]]
 use = "AminurAlam/yazi-plugins:preview-sqlite"
-rev = "8ed61d7"
-hash = "330b9ebc435f4b6a5ac40019de9ace56"
+rev = "8a3b35d"
+hash = "11ee002ea5080a73f2c2db5dceda50df"
 
 [[plugin.deps]]
 use = "DreamMaoMao/fg"
