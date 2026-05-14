@@ -17,7 +17,7 @@ return {
       servers = {
         ---@type lazyvim.lsp.Config
         pyrefly = {
-          enabled = true,
+          enabled = false,
           settings = {},
         },
         ---@type lazyvim.lsp.Config
@@ -49,7 +49,7 @@ return {
         },
         ---@type lazyvim.lsp.Config
         pyright = {
-          enabled = false,
+          enabled = true,
           settings = {
             pyright = {
               analysis = {

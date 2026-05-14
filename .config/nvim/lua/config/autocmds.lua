@@ -17,3 +17,20 @@ local autocmd = vim.api.nvim_create_autocmd
 -- Prefer creating groups and assigning autocmds to groups, because it makes it easier to clear them
 -- --[[ Mygroup Group ]]
 -- augroup("mygroup", { clear = true })
+local flash_group = augroup("flash_group", { clear = true })
+
+local function flash_hl()
+  vim.api.nvim_set_hl(0, "FlashLabel", {
+    fg = "#333333", -- Dark text
+    bg = "#ff007c", -- Light red background
+    bold = true,
+  })
+end
+
+flash_hl()
+
+autocmd("ColorScheme", {
+  group = flash_group,
+  callback = flash_hl,
+  desc = "Override Flash label highlights",
+})
