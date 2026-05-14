@@ -12,16 +12,23 @@
     "@cortexkit/opencode-magic-context@latest",
     "oh-my-opencode-slim",
     "superpowers@git+https://github.com/obra/superpowers.git",
-    "@plannotator/opencode@latest",
-    // [
-    //   "@plannotator/opencode@latest",
-    //   {
-    //     "workflow": "plan-agent",
-    //     "planningAgents": ["plan", "orchestrator"],
-    //   },
-    // ],
+    [
+      "@plannotator/opencode@latest",
+      {
+        "workflow": "plan-agent",
+        "planningAgents": ["plan", "orchestrator"],
+      },
+    ],
+    "./plugins/caveman/plugin.js",
+
+    // "@cortexkit/aft-opencode@latest"
   ],
   "mcp": {
+    // "caveman-shrink": {
+    //   "type": "local",
+    //   "command": ["npx", "-y", "caveman-shrink"],
+    //   "enabled": true,
+    // },
     "zotero": {
       "type": "local",
       "command": ["zotero-mcp", "serve"],
