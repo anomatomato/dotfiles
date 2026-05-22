@@ -35,7 +35,7 @@
       },
       "fixer": {
         "model": "openai/gpt-5.3-codex",
-        "variant": "low",
+        "variant": "medium",
         "skills": [],
         "mcps": [],
       },
@@ -98,7 +98,7 @@
     },
   },
   "tmux": {
-    "enabled": false, // Enable pane monitoring
+    "enabled": true, // Enable pane monitoring
     "layout": "main-vertical",
     "main_pane_size": 60, // Main pane size as percentage (20–80)
   },

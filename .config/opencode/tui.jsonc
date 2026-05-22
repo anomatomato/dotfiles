@@ -2,14 +2,15 @@
   "$schema": "https://opencode.ai/tui.json",
   "keybinds": {
     "leader": "ctrl+x",
-    "app_exit": "ctrl+c,<leader>q"
+    "app_exit": "ctrl+c,<leader>q",
   },
   "scroll_speed": 3,
   "scroll_acceleration": {
-    "enabled": true
+    "enabled": true,
   },
   "plugin": [
     "@cortexkit/opencode-magic-context@latest",
-    "oh-my-opencode-slim"
-  ]
+    "oh-my-opencode-slim",
+    "@cortexkit/aft-opencode@latest",
+  ],
 }

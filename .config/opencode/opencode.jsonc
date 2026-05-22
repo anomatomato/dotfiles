@@ -10,6 +10,7 @@
   "plugin": [
     "cc-safety-net",
     "@cortexkit/opencode-magic-context@latest",
+    "@cortexkit/aft-opencode@latest",
     "oh-my-opencode-slim",
     "superpowers@git+https://github.com/obra/superpowers.git",
     [
